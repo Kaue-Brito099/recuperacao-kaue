@@ -1,0 +1,50 @@
+<!-- Kauê Brito Ribeiro -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrossel de Imagens</title>
+  <link rel="stylesheet" href="8.css">
+</head>
+<body>
+  <div class="slideshow-container">
+    <div class="slide fade">
+      <img src="https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt9f2877e96d86e4c5/63c505c694377e7cb0a82be7/odegaard-16-9.jpg?auto=webp&format=pjpg&width=3840&quality=60" alt="Imagem 1">
+    </div>
+    <div class="slide fade">
+      <img src="https://th.bing.com/th/id/OIP.h-q53b-pQ9qokzL-YKN0_wHaEo?w=2560&h=1600&rs=1&pid=ImgDetMain" alt="Imagem 2">
+    </div>
+    <div class="slide fade">
+      <img src="https://th.bing.com/th/id/R.d9f449b4769064633453b3c64b7b9a54?rik=tEIUCvwXkl28rA&pid=ImgRaw&r=0" alt="Imagem 3">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("slide");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      slides[slideIndex-1].style.display = "block";
+    }
+
+    setInterval(function(){
+      plusSlides(1);
+    }, 3000);
+  </script>
+</body>
+</html>
